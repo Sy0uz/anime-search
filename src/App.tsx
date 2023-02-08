@@ -3,6 +3,7 @@ import { JikanMOE } from './API/JikanMOE';
 import AnimeTitlePage from './pages/AnimeTitlePage';
 import { IAnime } from './types/types';
 import Navbar from './UI/Navbar/Navbar';
+import SideMenu from './UI/SideMenu/SideMenu';
 
 const App = () => {
 
@@ -20,9 +21,11 @@ const App = () => {
     return (
         <div className='App'>
             <Navbar/>
-            <AnimeTitlePage />
+            <main className='main'>
+                <SideMenu/>
+                <AnimeTitlePage/>                  
+            </main>
         </div>
-        
     )
 }
 

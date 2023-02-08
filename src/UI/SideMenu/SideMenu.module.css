@@ -1,0 +1,28 @@
+.wrapper {
+    border-right: 3px solid whitesmoke;
+    width: 66px;
+    flex-shrink: 0;
+    transition-duration: 0.4s;
+    transition-property: width;
+}
+
+.active {
+    width: 250px;
+}
+
+.sidebar {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top:55px;
+    padding: 6px 12px;
+}
+
+.btnWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnTitle {
+    font-weight: bold;
+}

@@ -5,8 +5,7 @@
 }
 
 .App {
-    margin: 55px auto 0 auto;
-    padding: 0 20px;
+    margin: 55px 0 0 0;
 }
 
 .container {
@@ -17,4 +16,9 @@
 
 .spin {
     margin: 20px 0;
+}
+
+.main {
+    display: flex;
+    position: relative;
 }
