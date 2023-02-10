@@ -1,0 +1,21 @@
+.rate {
+    color: var(--main-blue)
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: -6px;
+}
+
+.score {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: -5px;
+}
+
+.scoredBy {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}

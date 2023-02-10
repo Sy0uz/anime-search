@@ -12,7 +12,7 @@ export class JikanMOE {
         return response.data.data;
     }
 
-    static async getAnimeById(id: number): Promise<IAnimeFull> {
+    static async getAnimeById(id: number | string | undefined): Promise<IAnimeFull> {
         const response = await axios.get<IAnimeFullResponse>(`https://api.jikan.moe/v4/anime/${id}/full`)
         return response.data.data;
     }

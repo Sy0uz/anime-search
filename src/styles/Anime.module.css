@@ -1,0 +1,55 @@
+.wrapper {
+    padding: 5px 20px;
+}
+
+.jTitle {
+    opacity: 0.6;
+    font-size: 2rem;
+}
+
+.divider {
+    margin: 10px 0 20px 0;
+}
+
+.promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.title {
+    margin-bottom: 0 !important;
+}
+
+.infoBox {
+    display: flex;
+}
+
+.preview {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.titleImgBox {
+    position: relative;
+    overflow: hidden;
+    width: 236px;
+    height: 336px;
+    flex-shrink: 0;
+}
+
+.titleImg {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 236px;
+    height: 336px;
+    object-fit: cover;
+}
+
+.rating {
+    flex-shrink: 0;
+    min-width: 140px;
+}

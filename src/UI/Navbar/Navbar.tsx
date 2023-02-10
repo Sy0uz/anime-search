@@ -6,14 +6,14 @@ import Logo from '../Logo/Logo'
 
 const Navbar: FC = () => {
     return (
-        <div className={s.wrapper}>
+        <header className={s.wrapper}>
 
             <Space className={s.box}>
                 <Logo/>
                 <SearchBar/>
             </Space>
 
-        </div>
+        </header>
     )
 }
 

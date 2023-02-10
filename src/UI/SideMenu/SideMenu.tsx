@@ -17,9 +17,9 @@ const SideMenu:FC = () => {
                 <Button onClick={expandMenuHandler} type='ghost' size='large' className={s.ctrlBtn} icon={expanded ? <CloseOutlined /> : <MenuOutlined/>}/>
                 <Divider style={{margin:'6px 0'}}/>
 
-                <SideMenuBtn icon={<FireOutlined />} title='Аниме'/>
-                <SideMenuBtn icon={<HeartOutlined />}/>
-                <SideMenuBtn icon={<MailOutlined />}/>
+                <SideMenuBtn expanded={expanded} icon={<FireOutlined />} title='Аниме'/>
+                <SideMenuBtn expanded={expanded} icon={<HeartOutlined />} title='Мои списки'/>
+                <SideMenuBtn expanded={expanded} icon={<MailOutlined />} title='Почта'/>
             </div>
 
         </aside>

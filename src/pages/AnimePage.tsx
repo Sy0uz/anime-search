@@ -1,16 +1,22 @@
 import React, {FC, useEffect, useState} from 'react'
 import { JikanMOE } from '../API/JikanMOE';
-import AnimeTitle from '../components/AnimeTitle'
+import Anime from '../components/Anime/Anime'
 import { IAnimeFull } from '../types/types';
 import {Spin} from 'antd';
+import {useParams} from 'react-router-dom';
+import Loader from '../UI/Loader/Loader';
+
+type AnimeTitlePageParams = {
+    id: string;
+}
 
 const AnimeTitlePage: FC = () => {
 
-    const id = 44511;
+    const params = useParams<AnimeTitlePageParams>();
     const [anime, setAnime] = useState<IAnimeFull | null>(null);
 
     const fetchAnime = async () => {
-        const response = await JikanMOE.getAnimeById(id);
+        const response = await JikanMOE.getAnimeById(params.id);
         setAnime(response)
     }
 
@@ -19,12 +25,10 @@ const AnimeTitlePage: FC = () => {
     }, [])
 
     if (!anime)
-        return <div className='container spin'>
-                <Spin size='large'/>
-            </div>
+        return <Loader/>
 
     return (
-        <AnimeTitle anime={anime}/>
+        <Anime anime={anime}/>
     )
 }
 

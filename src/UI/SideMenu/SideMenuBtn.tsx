@@ -1,22 +1,26 @@
 import React, {FC, ReactNode} from 'react'
-import { Button, Typography } from 'antd';
+import {Space } from 'antd';
 import s from './SideMenu.module.css';
 
 interface BtnProps {
     icon: ReactNode;
     title?: string;
+    expanded: boolean;
 }
 
-const SideMenuBtn:FC<BtnProps> = ({icon, title}) => {
+const SideMenuBtn:FC<BtnProps> = ({icon, title, expanded}) => {
+
     return (
+        expanded 
+        ?
         <div className={s.btnWrapper}>
-            <Button className={s.menuBtn} type='ghost' size='large' icon={icon}>
-                <Typography.Text className={s.btnTitle}>
-                    {title}
-                </Typography.Text>                
-            </Button>
+            <span className={s.icon}>{icon}</span>
+            <span className={s.btnTitle}>{title}</span>
         </div>
-        
+        :
+        <div className={[s.btnWrapper, s.expanded].join(' ')}>
+            <span className={s.icon}>{icon}</span>
+        </div>
     )
 }
 
