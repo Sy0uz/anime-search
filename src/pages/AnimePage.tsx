@@ -2,9 +2,9 @@ import React, {FC, useEffect, useState} from 'react'
 import { JikanMOE } from '../API/JikanMOE';
 import Anime from '../components/Anime/Anime'
 import { IAnimeFull } from '../types/types';
-import {Spin} from 'antd';
 import {useParams} from 'react-router-dom';
 import Loader from '../UI/Loader/Loader';
+import Wrapper from '../UI/Wrapper/Wrapper';
 
 type AnimeTitlePageParams = {
     id: string;
@@ -28,7 +28,9 @@ const AnimeTitlePage: FC = () => {
         return <Loader/>
 
     return (
-        <Anime anime={anime}/>
+        <Wrapper>
+            <Anime anime={anime}/>
+        </Wrapper>
     )
 }
 

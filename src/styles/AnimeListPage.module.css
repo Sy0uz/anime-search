@@ -1,0 +1,7 @@
+.section {
+    display: flex;
+}
+
+.wrapper {
+    flex: 1;
+}

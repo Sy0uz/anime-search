@@ -1,5 +1,5 @@
 import { Button, Divider} from 'antd';
-import React, {FC, useState} from 'react'
+import {FC, useState, useEffect} from 'react'
 import s from './SideMenu.module.css'
 import {MenuOutlined, CloseOutlined, FireOutlined, HeartOutlined, MailOutlined} from '@ant-design/icons'
 import SideMenuBtn from './SideMenuBtn';
@@ -7,6 +7,12 @@ import SideMenuBtn from './SideMenuBtn';
 const SideMenu:FC = () => {
 
     const [expanded, setExpanded] = useState<boolean>(false);
+    const [showText, setShowText] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (expanded) setTimeout(() => setShowText(true), 300);
+        else setShowText(false);
+    }, [expanded])
 
     const expandMenuHandler = () => setExpanded(!expanded)
 
@@ -17,9 +23,9 @@ const SideMenu:FC = () => {
                 <Button onClick={expandMenuHandler} type='ghost' size='large' className={s.ctrlBtn} icon={expanded ? <CloseOutlined /> : <MenuOutlined/>}/>
                 <Divider style={{margin:'6px 0'}}/>
 
-                <SideMenuBtn expanded={expanded} icon={<FireOutlined />} title='Аниме'/>
-                <SideMenuBtn expanded={expanded} icon={<HeartOutlined />} title='Мои списки'/>
-                <SideMenuBtn expanded={expanded} icon={<MailOutlined />} title='Почта'/>
+                <SideMenuBtn path='/anime' expanded={expanded} show={showText} icon={<FireOutlined />} title='Аниме'/>
+                <SideMenuBtn path='' expanded={expanded} show={showText} icon={<HeartOutlined />} title='Мои списки'/>
+                <SideMenuBtn path='' expanded={expanded} show={showText} icon={<MailOutlined />} title='Почта'/>
             </div>
 
         </aside>

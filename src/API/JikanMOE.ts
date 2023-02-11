@@ -1,12 +1,10 @@
 import axios from "axios";
-import { IAnime, IAnimeFull, IAnimeFullResponse, IAnimeListResponse } from "../types/types";
+import { IAnime, IAnimeFull, IAnimeFullResponse, IAnimeListParams, IAnimeListResponse } from "../types/types";
 
 export class JikanMOE {
-    static async getAnimeListByName(name:string): Promise<IAnime[]> {
+    static async getAnimeList(params?:IAnimeListParams): Promise<IAnime[]> {
         const response = await axios.get<IAnimeListResponse>('https://api.jikan.moe/v4/anime', {
-            params: {
-                q: name,
-            }
+            params
         })
 
         return response.data.data;

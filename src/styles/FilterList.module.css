@@ -1,0 +1,16 @@
+.wrapper {
+    border-left: 3px solid whitesmoke;
+    width: 250px;
+    padding: 10px 10px;
+}
+
+.filterGroup + .filterGroup {
+    margin-top: 1.6rem;
+}
+
+.item {
+    font-size: 0.9rem;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.77);
+    display: flex;
+}

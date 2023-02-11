@@ -14,7 +14,7 @@ const Rating: FC<RateProps> = ({score, scored_by}) => {
     return (
         <div className={s.wrapper}>
             <span className={s.score}>{rate}</span>
-            <span className={s.scoredBy}>{scored_by.toLocaleString()} users</span>
+            <span className={s.scoredBy}>{scored_by ? scored_by.toLocaleString() : '-'} users</span>
         </div>
     )
 }

@@ -47,6 +47,7 @@ export interface IAnime {
     type: string;
     episodes: number;
     status: string;
+    source: string;
     airing: boolean;
     aired: {
         from: string;
@@ -102,4 +103,18 @@ export interface IAnimeListResponse {
 
 export interface IAnimeFullResponse {
     data: IAnimeFull;
+}
+
+export interface IFilter {
+    title: string;
+    value: string;
+}
+
+export interface IAnimeListParams {
+    q?: string;
+    status?: string;
+    rating?: string;
+    order_by?: string;
+    sort?: string;
+    type?: any;
 }
